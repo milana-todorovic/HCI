@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="SekretarView.DemoFinished"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SekretarView"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <TextBlock Margin="0,30,0,0" Width="300" TextAlignment="Justify" FontSize="18" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Center">Demonstracija je završena. Pritisnite dugme 'Ponovi demonstraciju' da ponovo pokrenete demonstraciju, ili dugme 'Nazad' da se vratite na formu za zakazivanje pregleda.</TextBlock>
+    </Grid>
+</UserControl>

@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F3591D3A-1E92-4BD6-A0C6-F8BEC819527C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SekretarView</RootNamespace>
+    <AssemblyName>SekretarView</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=1.2.4.1361, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.4\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=3.1.1.1361, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.3.1.1\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework" />
+    <Reference Include="Syncfusion.Compression.Base, Version=18.1460.0.56, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Compression.Base.18.1.0.56\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DocIO.Base, Version=18.1460.0.56, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.DocIO.Wpf.18.1.0.56\lib\net46\Syncfusion.DocIO.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DocToPdfConverter.Base, Version=18.1460.0.56, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.DocToPDFConverter.Wpf.18.1.0.56\lib\net46\Syncfusion.DocToPdfConverter.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=18.1460.0.56, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.18.1.0.56\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.OfficeChart.Base, Version=18.1460.0.56, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.OfficeChart.Base.18.1.0.56\lib\net46\Syncfusion.OfficeChart.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Base, Version=18.1460.0.56, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Pdf.Wpf.18.1.0.56\lib\net46\Syncfusion.Pdf.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.4.4.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Model\Blog\BlogAuthor.cs" />
+    <Compile Include="Model\Blog\BlogPost.cs" />
+    <Compile Include="Model\HospitalResources\Department.cs" />
+    <Compile Include="Model\HospitalResources\EquipmentType.cs" />
+    <Compile Include="Model\HospitalResources\EquipmentUnit.cs" />
+    <Compile Include="Model\HospitalResources\MedicalConsumable.cs" />
+    <Compile Include="Model\HospitalResources\MedicalConsumableType.cs" />
+    <Compile Include="Model\HospitalResources\Renovation.cs" />
+    <Compile Include="Model\HospitalResources\Room.cs" />
+    <Compile Include="Model\HospitalResources\RoomType.cs" />
+    <Compile Include="Model\Medication\Amount.cs" />
+    <Compile Include="Model\Medication\Frequency.cs" />
+    <Compile Include="Model\Medication\Ingredient.cs" />
+    <Compile Include="Model\Medication\IntakeInstructions.cs" />
+    <Compile Include="Model\Medication\Medication.cs" />
+    <Compile Include="Model\Medication\MedicationPrescription.cs" />
+    <Compile Include="Model\Medication\MedicineType.cs" />
+    <Compile Include="Model\Medication\SideEffect.cs" />
+    <Compile Include="Model\Medication\SideEffectFrequency.cs" />
+    <Compile Include="Model\Miscellaneous\Allergy.cs" />
+    <Compile Include="Model\Miscellaneous\Diagnosis.cs" />
+    <Compile Include="Model\Notifications\HospitalizationNotification.cs" />
+    <Compile Include="Model\Notifications\HospitalizationUpdateType.cs" />
+    <Compile Include="Model\Notifications\MedicationPrescriptionNotification.cs" />
+    <Compile Include="Model\Notifications\Notification.cs" />
+    <Compile Include="Model\Notifications\ProcedureNotification.cs" />
+    <Compile Include="Model\Notifications\ProcedureUpdateType.cs" />
+    <Compile Include="Model\Notifications\RequestNotification.cs" />
+    <Compile Include="Model\Requests\ClearDoctorsSchedule.cs" />
+    <Compile Include="Model\Requests\ClearRoomsSchedule.cs" />
+    <Compile Include="Model\Requests\MedicationInputRequest.cs" />
+    <Compile Include="Model\Requests\Request.cs" />
+    <Compile Include="Model\Requests\RequestStatus.cs" />
+    <Compile Include="Model\Requests\ScheduleAdjustmentRequest.cs" />
+    <Compile Include="Model\Requests\ScheduleHospitalization.cs" />
+    <Compile Include="Model\Requests\ScheduleProcedure.cs" />
+    <Compile Include="Model\Schedule\Hospitalizations\DischargeType.cs" />
+    <Compile Include="Model\Schedule\Hospitalizations\Hospitalization.cs" />
+    <Compile Include="Model\Schedule\Hospitalizations\HospitalizationType.cs" />
+    <Compile Include="Model\Schedule\Procedures\Examination.cs" />
+    <Compile Include="Model\Schedule\Procedures\Procedure.cs" />
+    <Compile Include="Model\Schedule\Procedures\ProcedureKind.cs" />
+    <Compile Include="Model\Schedule\Procedures\ProcedurePriority.cs" />
+    <Compile Include="Model\Schedule\Procedures\ProcedureType.cs" />
+    <Compile Include="Model\Schedule\Procedures\Surgery.cs" />
+    <Compile Include="Model\Schedule\SchedulingPreferences\HospitalizationSchedulingPreference.cs" />
+    <Compile Include="Model\Schedule\SchedulingPreferences\ProcedureSchedulingPreference.cs" />
+    <Compile Include="Model\Schedule\SchedulingPreferences\TimingPreference.cs" />
+    <Compile Include="Model\Schedule\SchedulingPreferences\TimingPrefrenceType.cs" />
+    <Compile Include="Model\StorageRecords\AmountChangeRecord.cs" />
+    <Compile Include="Model\StorageRecords\ConsumableStorageRecord.cs" />
+    <Compile Include="Model\StorageRecords\MedicationStorageRecord.cs" />
+    <Compile Include="Model\StorageRecords\StorageRecord.cs" />
+    <Compile Include="Model\Users\Employee\Doctor.cs" />
+    <Compile Include="Model\Users\Employee\Employee.cs" />
+    <Compile Include="Model\Users\Employee\EmployeeStatus.cs" />
+    <Compile Include="Model\Users\Employee\Shift.cs" />
+    <Compile Include="Model\Users\Employee\Specialty.cs" />
+    <Compile Include="Model\Users\Generalities\Address.cs" />
+    <Compile Include="Model\Users\Generalities\City.cs" />
+    <Compile Include="Model\Users\Generalities\Country.cs" />
+    <Compile Include="Model\Users\Generalities\Gender.cs" />
+    <Compile Include="Model\Users\Generalities\Person.cs" />
+    <Compile Include="Model\Users\Patient\EmploymentHistory\Employment.cs" />
+    <Compile Include="Model\Users\Patient\EmploymentHistory\EmploymentInformation.cs" />
+    <Compile Include="Model\Users\Patient\EmploymentHistory\EmploymentStatus.cs" />
+    <Compile Include="Model\Users\Patient\EmploymentHistory\HazardType.cs" />
+    <Compile Include="Model\Users\Patient\EmploymentHistory\Job.cs" />
+    <Compile Include="Model\Users\Patient\EmploymentHistory\WorkplaceHazard.cs" />
+    <Compile Include="Model\Users\Patient\MaritalStatus.cs" />
+    <Compile Include="Model\Users\Patient\MedicalHistory\AllergyIntensity.cs" />
+    <Compile Include="Model\Users\Patient\MedicalHistory\AllergyManifestation.cs" />
+    <Compile Include="Model\Users\Patient\MedicalHistory\ConditionType.cs" />
+    <Compile Include="Model\Users\Patient\MedicalHistory\DiagnosisDetails.cs" />
+    <Compile Include="Model\Users\Patient\MedicalHistory\FamilyHistory.cs" />
+    <Compile Include="Model\Users\Patient\MedicalHistory\FamilyMember.cs" />
+    <Compile Include="Model\Users\Patient\MedicalHistory\MedicalHistory.cs" />
+    <Compile Include="Model\Users\Patient\MedicalHistory\PersonalHistory.cs" />
+    <Compile Include="Model\Users\Patient\Patient.cs" />
+    <Compile Include="Model\Users\Patient\PatientStatus.cs" />
+    <Compile Include="Model\Users\UserAccounts\EmployeeAccount.cs" />
+    <Compile Include="Model\Users\UserAccounts\EmployeeType.cs" />
+    <Compile Include="Model\Users\UserAccounts\PatientAccount.cs" />
+    <Compile Include="Model\Users\UserAccounts\UserAccount.cs" />
+    <Compile Include="Model\Users\UserFeedback\PatientSurveyResponse.cs" />
+    <Compile Include="Model\Users\UserFeedback\UserFeedback.cs" />
+    <Compile Include="Model\Utilities\TimeInterval.cs" />
+    <Compile Include="Model\Utilities\TimeIntervalCollection.cs" />
+    <Compile Include="LoggedIn\Demo\DemoFinished.xaml.cs">
+      <DependentUpon>DemoFinished.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\Demo\DemoDescriptionView.xaml.cs">
+      <DependentUpon>DemoDescriptionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\Demo\DemoView.xaml.cs">
+      <DependentUpon>DemoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\Demo\DemoViewModel.cs" />
+    <Compile Include="LoggedIn\Hospitalizations\HospitalizationFilterView.xaml.cs">
+      <DependentUpon>HospitalizationFilterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\Hospitalizations\HospitalizationFilterViewModel.cs" />
+    <Compile Include="LoggedIn\Patients\PatientFilterViewModel.cs" />
+    <Compile Include="LoggedIn\Report\GenerateReportViewModel.cs" />
+    <Compile Include="LoggedIn\Report\ReportProcedure.cs" />
+    <Compile Include="LoggedIn\ScheduleHospitalization\HospitalizationReschedulingInfoView.xaml.cs">
+      <DependentUpon>HospitalizationReschedulingInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\ScheduleHospitalization\ChooseHospitalizationView.xaml.cs">
+      <DependentUpon>ChooseHospitalizationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\ScheduleHospitalization\ChooseHospitalizationViewModel.cs" />
+    <Compile Include="LoggedIn\ScheduleHospitalization\HospitalizationReschedulingInfoViewModel.cs" />
+    <Compile Include="LoggedIn\ScheduleHospitalization\HospitalizationSchedulingInfoView.xaml.cs">
+      <DependentUpon>HospitalizationSchedulingInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\Hospitalizations\HospitalizationView.xaml.cs">
+      <DependentUpon>HospitalizationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\Hospitalizations\DailyHospitalizationScheduleView.xaml.cs">
+      <DependentUpon>DailyHospitalizationScheduleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\ExaminationsAndSurgeries\FilterProceduresView.xaml.cs">
+      <DependentUpon>FilterProceduresView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\ExaminationsAndSurgeries\ProcedureFilterViewModel.cs" />
+    <Compile Include="LoggedIn\Hospitalizations\DailyHospitalizationScheduleViewModel.cs" />
+    <Compile Include="LoggedIn\Hospitalizations\HospitalizationViewModel.cs" />
+    <Compile Include="LoggedIn\ScheduleHospitalization\HospitalizationSchedulingInfoViewModel.cs" />
+    <Compile Include="LoggedIn\ScheduleHospitalization\HospitalizationTypeAndPatientViewModel.cs" />
+    <Compile Include="LoggedIn\ScheduleHospitalization\RescheduleHospitalizationViewModel.cs" />
+    <Compile Include="LoggedIn\ScheduleProcedure\ChooseReschedulingInfo.xaml.cs">
+      <DependentUpon>ChooseReschedulingInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\ScheduleProcedure\ChooseReschedulingInfoViewModel.cs" />
+    <Compile Include="LoggedIn\ScheduleProcedure\RescheduleProcedureViewModel.cs" />
+    <Compile Include="LoggedIn\ScheduleProcedure\ChooseProcedureView.xaml.cs">
+      <DependentUpon>ChooseProcedureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\ScheduleProcedure\ChooseProcedureViewModel.cs" />
+    <Compile Include="LoggedIn\ScheduleProcedure\ChooseSchedulingInfoView.xaml.cs">
+      <DependentUpon>ChooseSchedulingInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\ScheduleProcedure\ChoosePatientAndTypeView.xaml.cs">
+      <DependentUpon>ChoosePatientAndTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\ExaminationsAndSurgeries\MonthlyScheduleItem.cs" />
+    <Compile Include="LoggedIn\Patients\AddGuestAccountView.xaml.cs">
+      <DependentUpon>AddGuestAccountView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationViewModel.cs" />
+    <Compile Include="Calendar\CalendarDateConverter.cs" />
+    <Compile Include="Calendar\Calendar.cs" />
+    <Compile Include="Calendar\Day.cs" />
+    <Compile Include="Calendar\DayBorderColorConverter.cs" />
+    <Compile Include="DataMockup.cs" />
+    <Compile Include="LoggedIn\ExaminationsAndSurgeries\DailyProcedureScheduleView.xaml.cs">
+      <DependentUpon>DailyProcedureScheduleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\ExaminationsAndSurgeries\DailyProcedureScheduleViewModel.cs" />
+    <Compile Include="LoggedIn\ExaminationsAndSurgeries\ExaminationFilterViewModel.cs" />
+    <Compile Include="LoggedIn\ExaminationsAndSurgeries\MonthlyScheduleViewModel.cs" />
+    <Compile Include="LoggedIn\Patients\AddGuestAccountViewModel.cs" />
+    <Compile Include="LoggedIn\Patients\PatientSelectionViewModel.cs" />
+    <Compile Include="LoggedIn\Patients\RegisterPatientViewModel.cs" />
+    <Compile Include="LoggedIn\ScheduleProcedure\ChoosePatientAndTypeViewModel.cs" />
+    <Compile Include="LoggedIn\ScheduleProcedure\ChooseSchedulingInfoViewModel.cs" />
+    <Compile Include="LoggedIn\UserProfile\EditProfileView.xaml.cs">
+      <DependentUpon>EditProfileView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\UserProfile\EditProfileViewModel.cs" />
+    <Compile Include="LoggedIn\UserProfile\ChangePasswordView.xaml.cs">
+      <DependentUpon>ChangePasswordView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\UserProfile\ChangePasswordViewModel.cs" />
+    <Compile Include="LoggedIn\ExaminationsAndSurgeries\ProcedureViewModel.cs" />
+    <Compile Include="LoggedIn\ExaminationsAndSurgeries\ProcedureView.xaml.cs">
+      <DependentUpon>ProcedureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\UserProfile\UserFeedbackViewModel.cs" />
+    <Compile Include="LoggedIn\ExaminationsAndSurgeries\MonthlyScheduleView.xaml.cs">
+      <DependentUpon>MonthlyScheduleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\Patients\PatientSelectionView.xaml.cs">
+      <DependentUpon>PatientSelectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\Report\Report.xaml.cs">
+      <DependentUpon>Report.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\Patients\RegisterPatientView.xaml.cs">
+      <DependentUpon>RegisterPatientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\Demo\PatientSelectionDemoDummy.xaml.cs">
+      <DependentUpon>PatientSelectionDemoDummy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientFilterView.xaml.cs">
+      <DependentUpon>PatientFilterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Generics\Entity.cs" />
+    <Compile Include="LoggedIn\UserProfile\UserFeedbackView.xaml.cs">
+      <DependentUpon>UserFeedbackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\Demo\StepOneDemoDummy.xaml.cs">
+      <DependentUpon>StepOneDemoDummy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\Demo\StepTwoDemoDummy.xaml.cs">
+      <DependentUpon>StepTwoDemoDummy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\Demo\StepThreeDummy.xaml.cs">
+      <DependentUpon>StepThreeDummy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\BooleanInvertorConverter.cs" />
+    <Compile Include="Utilities\DateConverter.cs" />
+    <Compile Include="LoggedIn\MainContainerView.xaml.cs">
+      <DependentUpon>MainContainerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\MainContainerViewModel.cs" />
+    <Compile Include="LoggedIn\MenuItemGroupViewModel.cs" />
+    <Compile Include="LoggedIn\MenuItemViewModel.cs" />
+    <Compile Include="LoggedIn\Patients\PatientDetailsViewModel.cs" />
+    <Compile Include="LoggedIn\Patients\PatientDetails.xaml.cs">
+      <DependentUpon>PatientDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedIn\Patients\PatientListViewModel.cs" />
+    <Compile Include="LoggedIn\Patients\PatientListView.xaml.cs">
+      <DependentUpon>PatientListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LogInView.xaml.cs">
+      <DependentUpon>LogInView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LogInViewModel.cs" />
+    <Compile Include="LoggedIn\UserProfile\UserProfileViewModel.cs" />
+    <Compile Include="LoggedIn\UserProfile\UserProfileView.xaml.cs">
+      <DependentUpon>UserProfileView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\DateWithoutYear.cs" />
+    <Compile Include="Utilities\EnumBooleanConverter.cs" />
+    <Compile Include="Utilities\Mediator.cs" />
+    <Compile Include="Utilities\MultipleOptionRadioConverter.cs" />
+    <Compile Include="Utilities\PasswordBoxAssistant.cs" />
+    <Compile Include="Utilities\RelayCommand.cs" />
+    <Compile Include="Utilities\TimeConverter.cs" />
+    <Compile Include="Utilities\TimePickerConverter.cs" />
+    <Compile Include="Utilities\TimeSpanConverter.cs" />
+    <Compile Include="Utilities\ViewModelBase.cs" />
+    <Page Include="LoggedIn\Demo\DemoFinished.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\Demo\DemoDescriptionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\Demo\DemoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\Hospitalizations\HospitalizationFilterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\ScheduleHospitalization\HospitalizationReschedulingInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\ScheduleHospitalization\ChooseHospitalizationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\ScheduleHospitalization\HospitalizationSchedulingInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\Hospitalizations\HospitalizationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\Hospitalizations\DailyHospitalizationScheduleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\ExaminationsAndSurgeries\FilterProceduresView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\ScheduleProcedure\ChooseReschedulingInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\ScheduleProcedure\ChooseProcedureView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\ScheduleProcedure\ChooseSchedulingInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\ScheduleProcedure\ChoosePatientAndTypeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\Patients\AddGuestAccountView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Calendar\CalendarTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\ExaminationsAndSurgeries\DailyProcedureScheduleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\UserProfile\EditProfileView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\UserProfile\ChangePasswordView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\MainContainerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LogInView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="LoggedIn\Patients\PatientDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\Patients\PatientListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\UserProfile\UserProfileView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\ExaminationsAndSurgeries\ProcedureView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\ExaminationsAndSurgeries\MonthlyScheduleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\Patients\PatientSelectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\UserProfile\UserFeedbackView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\Report\Report.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\Patients\RegisterPatientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\Demo\PatientSelectionDemoDummy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\Demo\StepOneDemoDummy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\Demo\StepTwoDemoDummy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoggedIn\Demo\StepThreeDummy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientFilterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Implementacija\Dijagrami_klasa.csproj">
+      <Project>{df7bb694-ce51-45d5-91c2-fa0a3baf7613}</Project>
+      <Name>Dijagrami_klasa</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.3.1.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.1.1\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.3.1.1\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.3.1.1\build\MaterialDesignThemes.targets'))" />
+    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets'))" />
+  </Target>
+  <Import Project="..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
+</Project>

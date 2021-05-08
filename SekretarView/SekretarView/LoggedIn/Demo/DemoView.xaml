@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="SekretarView.DemoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:SekretarView"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Margin="20,10,20,0">
+            <Button Margin="0,10,0,20" Command="{Binding StartDemo}" Visibility="{Binding DemoActive, Converter={StaticResource InverseBoolToVisConverter}}"
+                    Click="RunDemo" x:Name="Zapocni">Započni demonstraciju</Button>
+            <Button Margin="0,0,0,20" Style="{StaticResource MaterialDesignRaisedAccentButton}" Command="{Binding Back}" Visibility="{Binding DemoActive, Converter={StaticResource InverseBoolToVisConverter}}" x:Name="Nazad">Odustani</Button>
+            <Button Margin="0,0,0,10" Command="{Binding StopDemo}" Visibility="{Binding DemoActive, Converter={StaticResource BooleanToVisibilityConverter}}">Zaustavi demonstraciju</Button>
+        </StackPanel>
+        
+            <ContentControl x:Name="Holder"></ContentControl>
+                
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="SekretarView.ChooseHospitalizationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:SekretarView"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+        <materialDesign:ColorZone DockPanel.Dock="Bottom" materialDesign:ShadowAssist.ShadowDepth="Depth5" materialDesign:ShadowAssist.ShadowEdges="Top"
+                                  materialDesign:ShadowAssist.Darken="True" BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0,1,0,0">
+            <StackPanel Margin="20,10,20,10">
+                <Slider
+                    TickPlacement="BottomRight"
+                    TickFrequency="1"
+                    Orientation="Horizontal"
+                    Minimum="0"
+                    Maximum="{Binding StepNum, Mode=OneTime}"
+                    Value="{Binding StepNum, Mode=OneTime}"
+                    IsEnabled="False" Foreground="{DynamicResource PrimaryHueMidBrush}"/>
+                <Button Margin="0,10,0,0" Command="{Binding PreviousStep}">Prethodni korak</Button>
+                <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Margin="0,10,0,0" Command="{Binding Cancel}">Odustani</Button>
+            </StackPanel>
+        </materialDesign:ColorZone>
+
+        <materialDesign:ColorZone DockPanel.Dock="Top" materialDesign:ShadowAssist.ShadowDepth="Depth2" materialDesign:ShadowAssist.ShadowEdges="Bottom"
+                                  BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0,1,0,0"
+                                  Padding="20,10,20,10">
+            <StackPanel>
+                <TextBlock TextWrapping="Wrap" Padding="0,0,0,5" Text="{Binding Type}" FontSize="18" Foreground="{DynamicResource PrimaryHueMidBrush}"></TextBlock>
+                <TextBlock TextWrapping="Wrap" Padding="0" Text="Pacijent" FontSize="12" VerticalAlignment="Bottom" Foreground="{DynamicResource MaterialDesignLightForeground}"></TextBlock>
+                <TextBlock TextWrapping="Wrap" Padding="0" Text="{Binding Patient}" FontSize="16" VerticalAlignment="Top"></TextBlock>
+            </StackPanel>
+        </materialDesign:ColorZone>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <ScrollViewer.Resources>
+                <Style TargetType="ScrollBar" BasedOn="{StaticResource MaterialDesignScrollBarMinimal}"/>
+            </ScrollViewer.Resources>
+            <ItemsControl ItemsSource="{Binding Hospitalizations}" Padding="20,5,20,20">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <materialDesign:Card UniformCornerRadius="5" BorderThickness="1,1,1,1"
+                                             BorderBrush="{DynamicResource MaterialDesignDivider}"
+                                             Margin="0,15,0,0" Padding="10,10,10,10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="110"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock TextWrapping="Wrap" Margin="0,0,10,0" Padding="0" Grid.Row="0" Grid.Column="0" Text="Prostorija" FontSize="12" VerticalAlignment="Bottom" Foreground="{DynamicResource MaterialDesignLightForeground}"></TextBlock>
+                                <TextBlock TextWrapping="Wrap" Margin="0,0,10,0" Padding="0" Grid.Row="1" Grid.Column="0" Text="{Binding Room}" FontSize="16" VerticalAlignment="Top"></TextBlock>
+                                <TextBlock TextWrapping="Wrap" Margin="0,0,10,0" Padding="0" Grid.Row="2" Grid.Column="0" Text="Broj dana" FontSize="12" VerticalAlignment="Bottom" Foreground="{DynamicResource MaterialDesignLightForeground}"></TextBlock>
+                                <TextBlock TextWrapping="Wrap" Margin="0,0,10,0" Padding="0" Grid.Row="3" Grid.Column="0" Text="{Binding NumberOfDays}" FontSize="16" VerticalAlignment="Top"></TextBlock>
+
+                                <DockPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="7">
+                                    <StackPanel DockPanel.Dock="Top">
+                                        <Grid Margin="0,0,0,10">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                                <ColumnDefinition Width="10"></ColumnDefinition>
+                                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" Text="{Binding StartsAt, Mode=OneWay, Converter={local:DateWithoutYear}}" FontSize="18" TextAlignment="Center"></TextBlock>
+                                            <TextBlock Grid.Column="1" Text=" - " FontSize="18"></TextBlock>
+                                            <TextBlock Grid.Column="2" Text="{Binding EndsAt, Mode=OneWay, Converter={local:DateWithoutYear}}" FontSize="18"  TextAlignment="Center"></TextBlock>
+                                        </Grid>
+                                    </StackPanel>
+
+                                    <StackPanel VerticalAlignment="Bottom">
+                                        <StackPanel VerticalAlignment="Bottom">
+                                            <Button Margin="0,5,0,0"  HorizontalAlignment="Stretch"
+                                        Command="{Binding DataContext.HandleHospitalization, RelativeSource={RelativeSource AncestorType={x:Type local:ChooseHospitalizationView}}}"
+                                                CommandParameter="{Binding }" 
+                                                Content="{Binding DataContext.HandleHospitalizationName, RelativeSource={RelativeSource AncestorType={x:Type local:ChooseHospitalizationView}}}"></Button>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </DockPanel>
+
+                            </Grid>
+                        </materialDesign:Card>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </DockPanel>
+</UserControl>
